@@ -20,37 +20,122 @@
         </nav>
     </header>
     
+    <!-- Shopping Cart Sidebar -->
+    <aside id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cart-close">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="">
+                <div class="modal-details">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                    <div class="modal-price-section">
+                        <p class="price"><strong>Price:</strong> <span id="modal-price">$0.00</span></p>
+                        <p class="stock"><strong>Stock:</strong> <span id="modal-stock">0</span> units</p>
+                    </div>
+                    <div class="modal-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="qty-minus">−</button>
+                            <input type="number" id="quantity" min="1" value="1">
+                            <button class="qty-btn" id="qty-plus">+</button>
+                        </div>
+                        <button class="add-to-cart-modal" id="add-to-cart-modal">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main>
         <section id="hero">
             <h2>Welcome to Auto Spares Shop</h2>
             <p>Your one-stop shop for all auto spare parts.</p>
         </section>
         
+        <!-- Cart Toggle & Filter/Sort Section -->
+        <section id="controls-section">
+            <div class="controls-left">
+                <button class="cart-toggle" id="cart-toggle">
+                    🛒 Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+            <div class="controls-right">
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="">All Categories</option>
+                        <option value="filters">Filters</option>
+                        <option value="plugs">Plugs</option>
+                        <option value="pads">Pads</option>
+                    </select>
+                </div>
+                <div class="sort-group">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="default">Default</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A-Z</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        
         <section id="featured-products">
             <h3>Featured Products</h3>
-            <div class="product-list">
-                <div class="product-item">
+            <div class="product-list" id="product-list">
+                <div class="product-item" data-id="1" data-name="Brake Pads" data-price="45.99" data-category="pads" data-stock="15">
                     <img src="images/product1.jpg" alt="Brake Pads">
                     <h4>Brake Pads</h4>
                     <p>High-quality brake pads for various car models.</p>
+                    <div class="product-price">$45.99</div>
+                    <button class="view-details-btn">View Details</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
                 
-                <div class="product-item">
+                <div class="product-item" data-id="2" data-name="Oil Filters" data-price="32.50" data-category="filters" data-stock="20">
                     <img src="images/product2.jpg" alt="Oil Filters">
                     <h4>Oil Filters</h4>
                     <p>Durable oil filters to keep your engine running smoothly.</p>
+                    <div class="product-price">$32.50</div>
+                    <button class="view-details-btn">View Details</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
                 
-                <div class="product-item">
+                <div class="product-item" data-id="3" data-name="Spark Plugs" data-price="28.99" data-category="plugs" data-stock="25">
                     <img src="images/product3.jpg" alt="Spark Plugs">
                     <h4>Spark Plugs</h4>
                     <p>Reliable spark plugs for optimal engine performance.</p>
+                    <div class="product-price">$28.99</div>
+                    <button class="view-details-btn">View Details</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
                 
-                <div class="product-item">
+                <div class="product-item" data-id="4" data-name="Air Filters" data-price="22.00" data-category="filters" data-stock="18">
                     <img src="images/product4.jpg" alt="Air Filters">
                     <h4>Air Filters</h4>
                     <p>High-efficiency air filters for clean airflow.</p>
+                    <div class="product-price">$22.00</div>
+                    <button class="view-details-btn">View Details</button>
+                    <button class="add-to-cart-btn">Add to Cart</button>
                 </div>
             </div>
         </section>
